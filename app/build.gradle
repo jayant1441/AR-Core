@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.jayantx.arcore"
+        minSdkVersion 24
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // Provides ARCore Session and related resources.
+    implementation 'com.google.ar:core:1.15.0'
+
+    // Provides ArFragment, and other UX resources.
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.15.0'
+
+    // Alternatively, use ArSceneView without the UX dependency.
+    implementation 'com.google.ar.sceneform:core:1.15.0'
+}
+
+
+
+sceneform.asset('assetsofobjects/model.obj',
+        'default',
+        'assetsofobjects/model.sfa',
+        'src/main/assets/model')
+
+sceneform.asset('assetsofobjects/bear.fbx',
+        'default',
+        'assetsofobjects/bear.sfa',
+        'src/main/assets/bear')
+
+sceneform.asset('assetsofobjects/pickachu.obj',
+        'default',
+        'assetsofobjects/pickachu.sfa',
+        'src/main/assets/pickachu')
+
+sceneform.asset('assetsofobjects/ironman.obj',
+        'default',
+        'assetsofobjects/ironman.sfa',
+        'src/main/assets/ironman')
+
+sceneform.asset('assetsofobjects/cybertruck.obj',
+        'default',
+        'assetsofobjects/cybertruck.sfa',
+        'src/main/assets/cybertruck')
+
+sceneform.asset('assetsofobjects/cobra.obj',
+        'default',
+        'assetsofobjects/cobra.sfa',
+        'src/main/assets/cobra')

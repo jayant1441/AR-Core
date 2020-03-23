@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <fragment
+        android:id="@+id/sceneform_fragment_view"
+        android:name="com.google.ar.sceneform.ux.ArFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/gallery_layout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintVertical_weight="9" />
+
+    <LinearLayout
+        android:id="@+id/gallery_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sceneform_fragment_view"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintVertical_weight="1">
+
+
+
+        <ImageView
+            android:id="@+id/pickachu"
+            android:layout_height="60dp"
+            android:layout_width="60dp"
+            android:src="@drawable/pikachu"
+            />
+
+        <ImageView
+            android:id="@+id/ironman"
+            android:layout_height="60dp"
+            android:layout_width="60dp"
+            android:src="@drawable/ironman"
+            />
+        <ImageView
+            android:id="@+id/cybertruck"
+            android:layout_height="60dp"
+            android:layout_width="60dp"
+            android:src="@drawable/cybertruck"
+            />
+
+        <ImageView
+            android:id="@+id/cobra"
+            android:layout_height="60dp"
+            android:layout_width="60dp"
+            android:src="@drawable/cobra"
+            />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
