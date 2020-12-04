@@ -1,4 +1,4 @@
-package com.jayantx.arcore
+package com.jhanvi.arcore
 
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         arFragment = supportFragmentManager.findFragmentById(R.id.sceneform_fragment_view) as ArFragment
 
         //Default model
-        setModelPath("pickachu.sfb")
+        setModelPath("chair.sfb")
 
         //Tab listener for the ArFragment
         arFragment.setOnTapArPlaneListener { hitResult, plane, _ ->
@@ -46,16 +46,16 @@ class MainActivity : AppCompatActivity() {
 
 
         pickachu.setOnClickListener {
-            setModelPath("pickachu.sfb")
+            setModelPath("chair.sfb")
         }
         ironman.setOnClickListener {
-            setModelPath("ironman.sfb")
+            setModelPath("table.sfb")
         }
         cybertruck.setOnClickListener {
-            setModelPath("cybertruck.sfb")
+            setModelPath("sofa.sfb")
         }
         cobra.setOnClickListener {
-            setModelPath("cobra.sfb")
+            setModelPath("clock.sfb")
         }
 
     }
